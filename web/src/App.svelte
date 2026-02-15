@@ -2,7 +2,11 @@
   import VisibilityProvider from './providers/VisibilityProvider.svelte'
   import TabletUI from './components/TabletUI.svelte'
   import { debugData } from './utils/debugData'
-  debugData([{ action: 'setVisible', data: true }])
+
+  // 👇 Ouvre automatiquement UNIQUEMENT en navigateur dev
+  if (import.meta.env.DEV) {
+    debugData([{ action: 'setVisible', data: true }])
+  }
 </script>
 
 <main>

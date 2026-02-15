@@ -9,7 +9,7 @@ type NuiEventHandler<T = any> = (data: T) => void;
 
 const eventListeners = new Map<string, NuiEventHandler[]>();
 
-const eventListener = (event: MessageEvent<NuiMessage>) => {
+const eventListener = (event: MessageEvent) => {
   const { action, data } = event.data;
   const handlers = eventListeners.get(action);
 

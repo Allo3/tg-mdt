@@ -26,8 +26,8 @@
     align-items: center;
     gap: 12px;
     padding: 10px 12px;
-    border-bottom: 1px solid #2a2a2a;
-    background: #161619;
+    border-bottom: 1px solid var(--stroke);
+    background: rgba(0,0,0,.10);
   }
   .title {
     font-weight: 700;
@@ -36,21 +36,29 @@
   .search input {
     width: 320px;
     max-width: 40vw;
-    background: #1f1f24;
-    color: #e9e9e9;
-    border: 1px solid #2b2b2f;
-    border-radius: 6px;
+    background: rgba(255,255,255,.05);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 14px;
     padding: 8px 10px;
     outline: none;
   }
-  .search input:focus { border-color: #3d47ff66 }
-  .close {
-    background: #444;
-    color: white;
-    border: 0;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
+  .search input:focus {
+    border-color: rgba(46,243,255,.30);
+    box-shadow: 0 0 0 3px rgba(46,243,255,.10);
   }
-  .close:hover { background: #555 }
+  .close {
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 8px 12px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 120ms var(--ease-out), border-color 120ms var(--ease-out), transform 120ms var(--ease-out);
+  }
+  .close:hover {
+    background: rgba(255,255,255,.10);
+    border-color: rgba(255,46,196,.25);
+    transform: translateY(-1px);
+  }
 </style>

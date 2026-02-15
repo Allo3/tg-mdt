@@ -28,8 +28,8 @@
 <style>
   .sidebar {
     width: 220px;
-    background: #141417;
-    border-right: 1px solid #2a2a2a;
+    background: rgba(255,255,255,.03);
+    border-right: 1px solid var(--stroke);
     display: flex;
     flex-direction: column;
     padding: 8px;
@@ -41,22 +41,27 @@
     align-items: center;
     gap: 8px;
     padding: 10px 10px;
-    border: 1px solid #1f1f24;
-    border-radius: 8px;
-    background: #1a1a1f;
-    color: #e9e9e9;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: rgba(255,255,255,.02);
+    color: var(--text);
     cursor: pointer;
+    transition: transform 120ms var(--ease-out), background 120ms var(--ease-out), border-color 120ms var(--ease-out);
   }
-  .item:hover { border-color: #2f2f35 }
+  .item:hover {
+    background: rgba(255,255,255,.05);
+    border-color: rgba(255,255,255,.10);
+    transform: translateY(-1px);
+  }
   .item.active {
-    background: #20202a;
-    border-color: #3d47ff66;
+    background: rgba(46,243,255,.08);
+    border-color: rgba(46,243,255,.22);
   }
   .ic { text-align: center }
   .lb { text-align: left }
   .foot {
     margin-top: auto;
-    opacity: .6;
+    color: var(--muted);
     font-size: 12px;
     text-align: center;
     padding: 6px 0;
